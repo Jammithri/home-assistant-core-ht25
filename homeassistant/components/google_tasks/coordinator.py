@@ -69,6 +69,7 @@ class TaskUpdateCoordinator(DataUpdateCoordinator[list[dict[str, Any]]]):
         async with asyncio.timeout(TIMEOUT):
             return await self.api.list_tasks(self.task_list_id)
 
+    # Logic for scheduling daily notification
     async def schedule_daily_notification(self):
         """Schedules daily execution of fetchTaskandSendNotif()."""
         if not self._notify_enabled:
@@ -97,4 +98,4 @@ class TaskUpdateCoordinator(DataUpdateCoordinator[list[dict[str, Any]]]):
         except Exception:
             _LOGGER.exception("Notification error")
 
-        self._schedule_daily_notification()
+        await self.schedule_daily_notification()
