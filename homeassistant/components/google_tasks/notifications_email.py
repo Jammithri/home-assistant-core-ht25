@@ -119,8 +119,8 @@ def send_email_notification(task_list, email_config):
  SENDER_EMAIL = "meenu2411as@gmail.com"
  SENDER_PASSWORD = "nchk yflh zmdh ybdz"
  RECIPIENT_EMAIL = "meaa24@student.bth.se"
-
- if __name__ == "__main__":
+"""
+if __name__ == "__main__":
      email_config = {
          "sender_email": "meenu2411as@gmail.com",
          "sender_password": "nchk yflh zmdh ybdz",
@@ -130,4 +130,3 @@ def send_email_notification(task_list, email_config):
      task_list = ["Doctor's appointment at 3pm", "Finish HA integration"]
 
      send_email_notification(task_list, email_config)
-"""
