@@ -16,14 +16,15 @@ async def test_schedule_daily_notification_enabled(hass: HomeAssistant) -> None:
     # Fake config_entry with notify_enabled = True and notify_time = "08:00"
     config_entry = MagicMock()
     config_entry.options = {
-        "notify_enabled": True,
-        "notify_time": "13:30",
+        "notification_enabled": True,
+        "notification_time": "13:30",
         "smtp_username": "sender@example.com",
         "recipient_email": "receiver@example.com",
         "smtp_password": "pass",
         "smtp_port": 587,
         "smtp_host": "smtp.example.com",
         "access_token": "fake_token",
+        "notification_type": "email",
     }
 
     # Mock API
